@@ -1,0 +1,10 @@
+numpy
+scipy
+sympy
+torch>=1.4.0
+pytorch-lightning>=0.7.3
+pandas
+scikit-learn
+tqdm
+torch_scatter
+pyarrow
