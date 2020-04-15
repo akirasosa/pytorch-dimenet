@@ -8,7 +8,7 @@ from dimenet.model.embedding_block import EmbeddingBlock
 from dimenet.model.interaction_block import InteractionBlock
 from dimenet.model.output_block import OutputBlock
 from dimenet.model.spherical_basis_layer import SphericalBasisLayer
-from dimenet.train.const import QM9_DB
+from dimenet.const import QM9_DB
 from dimenet.train.loader import AtomsBatch, get_loader
 from mylib.torch.data.dataset import PandasDataset
 from mylib.torch.nn.activations import mish

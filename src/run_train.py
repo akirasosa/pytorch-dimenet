@@ -11,11 +11,11 @@ import pandas as pd
 import pytorch_lightning as pl
 import torch
 from pytorch_lightning.loggers import TensorBoardLogger
-from sklearn.model_selection import KFold, train_test_split
+from sklearn.model_selection import train_test_split
 from torch.optim.lr_scheduler import CosineAnnealingLR
 
 from dimenet.model.dimenet import DimeNet
-from dimenet.train.const import EXP_DIR, QM9_DB
+from dimenet.const import EXP_DIR, QM9_DB
 from dimenet.train.loader import AtomsBatch, get_loader
 from mylib.torch.data.dataset import PandasDataset
 from mylib.torch.optim.ranger import Ranger

@@ -7,7 +7,7 @@ from sklearn.model_selection import KFold
 
 from dimenet.model.dimenet import DimeNet
 from dimenet.train import loader
-from dimenet.train.const import QM9_DB
+from dimenet.const import QM9_DB
 from mylib.tools.lr_finder import LRFinder
 from mylib.torch.data.dataset import PandasDataset
 from mylib.torch.optim.ranger import Ranger

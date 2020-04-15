@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from tqdm.auto import tqdm
 
-from dimenet.train.const import INPUT_QM9_DIR, STRUCTURES_CSV, ATOM_MAP, QM9_DB
+from dimenet.const import INPUT_QM9_DIR, STRUCTURES_CSV, ATOM_MAP, QM9_DB
 
 
 def processQM9_file(filename):

@@ -145,7 +145,7 @@ def collate(examples, cutoff: float, post_fn: Callable):
 
 
 if __name__ == '__main__':
-    from dimenet.train.const import QM9_DB
+    from dimenet.const import QM9_DB
 
     df = pd.read_parquet(QM9_DB, columns=[
         'R',
