@@ -126,13 +126,9 @@ class Ranger(Optimizer):
                 exp_avg, exp_avg_sq = state['exp_avg'], state['exp_avg_sq']
                 beta1, beta2 = group['betas']
 
-                # gc work  #3 = conv only, 1 = conv +fc
-                if len(list(grad.size())) > self.gc_gradient_threshold:
-                    grad.add_(-grad.mean(dim=tuple(range(1, len(list(grad.size())))), keepdim=True))
-
                 # GC operation for Conv layers and FC layers
-                if len(list(grad.size())) > self.gc_gradient_threshold:
-                    grad.add_(-grad.mean(dim=tuple(range(1, len(list(grad.size())))), keepdim=True))
+                if grad.dim() > self.gc_gradient_threshold:
+                    grad.add_(-grad.mean(dim=tuple(range(1, grad.dim())), keepdim=True))
 
                 state['step'] += 1
 
