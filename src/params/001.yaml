@@ -1,0 +1,19 @@
+note: 'Target is mu.'
+
+module_params:
+  target: mu
+  optim: radam
+  lr: 1e-4
+  weight_decay: 1e-4
+  batch_size: 32
+  ema_decay: 0.9999
+  ema_eval_freq: 1
+  fold: 0
+  n_splits: 4
+  seed: 1
+
+trainer_params:
+  epochs: 800
+  gpus: [0]
+  num_tpu_cores: null
+  use_16bit: false
