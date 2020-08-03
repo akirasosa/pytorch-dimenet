@@ -28,11 +28,9 @@ class DimeNet(nn.Module):
             num_dense_output=3,
             num_targets=12,
             activation=mish,
-            return_hidden_outputs: bool = False,
     ):
         super(DimeNet, self).__init__()
         self.num_blocks = num_blocks
-        self.return_hidden_outputs = return_hidden_outputs
 
         self.rbf_layer = BesselBasisLayer(
             num_radial,
@@ -135,7 +133,6 @@ if __name__ == '__main__':
         num_spherical=7,
         num_radial=6,
         num_targets=3,
-        return_hidden_outputs=True,
     )
 
     for batch in loader:

@@ -7,8 +7,6 @@ import scipy.sparse as sp
 import torch
 from torch.utils.data import Dataset, DataLoader
 
-from dimenet.const import DATA_DIR
-
 
 @dataclasses.dataclass
 class AtomsBatch:
@@ -41,6 +39,9 @@ class AtomsBatch:
     G: Optional[torch.Tensor] = None
     Cv: Optional[torch.Tensor] = None
     mulliken: Optional[torch.Tensor] = None
+
+    def __getitem__(self, item: str):
+        return getattr(self, item)
 
     @staticmethod
     def from_dict(params: Dict, device: Union[str, torch.device]):
@@ -153,18 +154,24 @@ class AtomsCollate:
         }
 
 
+# %%
 if __name__ == '__main__':
+    # %%
     from mylib.torch.data.dataset import PandasDataset
+    from dimenet.const import QM9_DB
 
-    df = pd.read_parquet(DATA_DIR / 'qm9.parquet', columns=[
+    # %%
+    df = pd.read_parquet(QM9_DB, columns=[
         'R',
         'Z',
         'U0',
     ])
+
+    # %%
     dataset = PandasDataset(df)
     loader = get_loader(dataset, batch_size=2, shuffle=False, cutoff=5.)
 
     for batch in loader:
-        batch = AtomsBatch.from_dict(batch, device='cuda')
-        print(batch.R)
+        batch = AtomsBatch.from_dict(batch, device='cpu')
+        print(batch.R, batch['U0'])
         break

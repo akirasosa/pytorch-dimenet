@@ -8,16 +8,25 @@ This repository is [DimeNet](https://arxiv.org/abs/2003.03123) PyTorch version w
 # Download processed QM9 data.
 ./download-data.sh
 
-# Train model to predict U0.
+# Train model to predict mu.
 cd src
-python run_train.py
+python run_train.py params/001.yaml
 ```
+
+## Results
+
+Epochs 800 is used.
+
+|Target|Unit|MAE|
+|---|---|---|
+| mu | Debye | 0.0261 |
+| U0 | meV | TODO |
+
 
 ## Differences from original
 
-* Use Ranger as an optimizer.
+* Use RAdam as an optimizer.
 * Use Mish as an activation.
-* Use flat cos anneal learning rate schedule.
 * The number of layers and n_hidden in OutputBlock might be different.
 * The loss func might be different.
 * Data splitting might be different.
