@@ -1,14 +1,14 @@
 from pathlib import Path
 
+DATA_DIR = Path('../data')
 EXP_DIR = Path('../experiments')
 
-INPUT_DIR = Path('../input')
-INPUT_QM9_DIR = INPUT_DIR / 'qm9'  # https://www.kaggle.com/zaharch/quantum-machine-9-aka-qm9
-INPUT_CSC_DIR = INPUT_DIR / 'champs-scalar-coupling'  # https://www.kaggle.com/c/champs-scalar-coupling/data
-INPUT_PROCESSED_DIR = INPUT_DIR / 'pytorch-dimenet'
+DATA_QM9_DIR = DATA_DIR / 'qm9'  # https://www.kaggle.com/zaharch/quantum-machine-9-aka-qm9
+DATA_CSC_DIR = DATA_DIR / 'champs-scalar-coupling'  # https://www.kaggle.com/c/champs-scalar-coupling/data
+DATA_PROCESSED_DIR = DATA_DIR / 'pytorch-dimenet'
 
-STRUCTURES_CSV = INPUT_CSC_DIR / 'structures.csv'
-QM9_DB = INPUT_PROCESSED_DIR / 'qm9.parquet'
+STRUCTURES_CSV = DATA_CSC_DIR / 'structures.csv'
+QM9_DB = DATA_PROCESSED_DIR / 'qm9.parquet'
 
 ATOM_MAP = {
     'H': 1,

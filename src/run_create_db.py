@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 from tqdm.auto import tqdm
 
-from dimenet.const import INPUT_QM9_DIR, STRUCTURES_CSV, ATOM_MAP, QM9_DB
+from dimenet.const import DATA_QM9_DIR, STRUCTURES_CSV, ATOM_MAP, QM9_DB
 
 
 def processQM9_file(filename):
-    path = INPUT_QM9_DIR / filename
+    path = DATA_QM9_DIR / filename
 
     stats = pd.read_csv(path, sep=' |\t', engine='python', skiprows=1, nrows=1, header=None)
     stats = stats.loc[:, 2:]
