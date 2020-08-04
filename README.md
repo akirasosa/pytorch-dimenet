@@ -19,7 +19,7 @@ Epochs 800 is used.
 
 |Target|Unit|MAE|
 |---|---|---|
-| mu | Debye | 0.0261 |
+| mu | Debye | 0.0285 |
 | U0 | meV | TODO |
 
 
